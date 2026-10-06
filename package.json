@@ -1,0 +1,49 @@
+{
+  "name": "agentia-cli-agentguard",
+  "description": "Agentia CLI oclif plugin",
+  "version": "0.1.0",
+  "author": "Siva",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "license": "MIT",
+  "keywords": [
+    "oclif-plugin",
+    "agentia"
+  ],
+  "files": [
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^4",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "oclif": "^4",
+    "shx": "^0.3.3",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "oclif": {
+    "bin": "agentia",
+    "dirname": "agentia-cli",
+    "commands": "./dist/commands",
+    "topics": {
+      "guard": {
+        "description": "Policy guardrails, approvals and audit trail for AI agents using Agentia CLI"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist tsconfig.tsbuildinfo && tsc -b --force",
+    "clean": "shx rm -f oclif.manifest.json",
+    "prepack": "npm run build && oclif manifest",
+    "postpack": "npm run clean"
+  }
+}

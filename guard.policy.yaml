@@ -1,0 +1,21 @@
+version: 1
+name: default
+freeze_windows:
+  - name: Weekend freeze
+    days: [Fri, Sat, Sun]
+    envs: [PROD]
+protected_envs: [UAT, PROD]
+max_components_per_promotion: 50
+restricted_metadata:
+  - type: PermissionSet
+    action: escalate
+  - type: Profile
+    action: escalate
+actions:
+  promote_real: escalate
+  promote_local: escalate
+  env_sync: escalate
+  cloud_op: escalate
+  delete_story: block
+  publish: allow
+  unknown: warn
