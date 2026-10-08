@@ -16,7 +16,7 @@ agent cannot bypass, and proof of what it did.
 
 ## Install
 ```
-git clone https://github.com/YOUR-USERNAME/agentguard.git
+git clone https://github.com/tulasisiva055-mygit/agentguard.git
 cd agentguard
 npm install
 npm run build
